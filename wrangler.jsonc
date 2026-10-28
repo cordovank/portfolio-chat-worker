@@ -13,24 +13,6 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
-
-	"vars": {
-		"OPENAI_MODEL": "gpt-5-nano",
-		"OPENAI_MAX_TOKENS": "300",
-		"ANTHROPIC_MODEL": "claude-haiku-4-5",
-		"ANTHROPIC_MAX_TOKENS": "300"
-  	}
-	/**
-	 * Smart Placement
-	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
-	 */
-	// "placement": {  "mode": "smart" }
-	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
-	 */
 	/**
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
@@ -38,6 +20,32 @@
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
 	 */
 	// "vars": {  "MY_VARIABLE": "production_value" }
+	"vars": {
+		"OPENAI_MODEL": "gpt-5-nano",
+		"OPENAI_MAX_TOKENS": "300",
+		"OLLAMA_MODEL": "gpt-oss",
+		"OLLAMA_MAX_TOKENS": "300",
+		"ANTHROPIC_MODEL": "claude-haiku-4-5",
+		"ANTHROPIC_MAX_TOKENS": "300"
+  	},
+	  /**
+	   * Bindings
+	   * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	   * databases, object storage, AI inference, real-time communication and more.
+	   * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	   */
+	"kv_namespaces": [
+		{
+			"binding": "PORTFOLIO_KV",
+			"id": "82d0d65e86664dc2bcc9deaf4396a21b",
+			"remote": true
+		}
+	]
+	/**
+	 * Smart Placement
+	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": {  "mode": "smart" }
 	/**
 	 * Static Assets
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
